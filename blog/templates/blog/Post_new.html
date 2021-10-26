@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}" type="text/css"/>
+        <title>Bloggo</title>
+    </head>
+    <body>
+        <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+        </header>
+           <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">New post</h2>
+           <form method="POST">
+           {% csrf_token %}   
+           {{ form.as_p }}
+           <button style="background-color:#1B7ED4; color:white" class="btn btn-outline-info" type="submit">Publish</button>
+           </form>
+    </body>
+</html>

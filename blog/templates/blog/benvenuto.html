@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}">
+        <title>Sign in</title>
+    </head>
+    <body>
+         <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+         </header>
+           <div class="up-h1">
+              <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">{{title}}</h1>
+           </div>
+           <div>
+               <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+               {{form.as_p}}
+               <input type="submit" value="{{title}}"/>
+           </div>
+     </body>
+               {% if messages %}
+               <ul class="messages">
+                 <li class="{{ message.tags }}">{{ message }}</li>
+               </ul>
+               {% endif %}
+               </form>
+{% endblock %}

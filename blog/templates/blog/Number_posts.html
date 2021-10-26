@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}" type="text/css"/>
+        <title>Bloggo</title>
+    </head>
+    <body>
+        <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+        </header>
+        <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">Search the word</h1>  
+        <p style="font-family: Open Sans">The word "{{word}}" is present in {{number_posts}} posts</p>
+     </body>
+</html>

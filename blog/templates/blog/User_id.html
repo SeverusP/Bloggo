@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}" type="text/css"/>
+        <title>Bloggo</title>
+    </head>
+    <body>
+        <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+        </header>
+        <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">user from id</h1>  
+        {% for id in user_id %}
+               <article>           
+                    <p style="font-family:Open Sans">Id {{user.id}} belong to {{user.username}}<p>
+               </article>
+        {% endfor %}
+    </body>
+</html>

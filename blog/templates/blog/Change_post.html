@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}" type="text/css"/>
+        <title>Bloggo</title>
+    </head>
+    <body>
+        <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+        </header>
+           <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">!Please change the content in your post!</h1>
+	 {% if messages %}
+         <ul class="messages">
+         {% for message in messages %}
+         <p style="color:red;font-size:30px; text-decoration:underline; font-family:Open Sans" class="{{ message.tags }}">{{ message }}</p>
+         {% endfor %}
+         </ul>
+         {% endif %}
+         <button style="background-color:#1B7ED4; color:white; margin-left: 20px;margin-top: 19px;" class="btn btn-outline-info" onclick="window.location.href='http://127.0.0.1:8000/login/Post_new/';">Change Post</button></p>
+</html>

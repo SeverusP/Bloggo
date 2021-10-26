@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}">
+        <title>Bloggo</title>
+    </head>
+    <body>
+         <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+         </header>
+              <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">Register</h1>
+              <h2 style="color:red; font-family:Open Sans; font-size:12px">NOTE: Password can't be too similar to your other personal information and it must contain at least 8 characters</h2>
+              <form method="POST">{% csrf_token %}
+                   {% for field in form %}
+                    <p>
+                       {{field.label_tag}}
+                       {{field}}
+                    </p>
+                    {% endfor %}
+                    
+              <button style="background-color:#1B7ED4; color:white" type="submit">Register</button>        
+     </body>
+</html>

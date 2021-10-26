@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}">
+        <title>Bloggo</title>
+    </head>
+    <body>
+         <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+         </header>
+              <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">Homepage</h1>
+                 <p style="color:black; text-transform: uppercase; font-family:Staatliches; font-size:20px">Welcome, {{user.username}}</p>
+      <br>
+      <li class="nav-item">
+        <a style="color:#0E1922; text-transform: uppercase; font-family:Staatliches; font-size:26px" class="nav-link" href="http://127.0.0.1:8000/login/Post_new/">New Post</a>
+      </li>
+      </br>
+      <br>
+      <li class="nav-item">
+        <a style="color:#0E1922; text-transform: uppercase; font-family:Staatliches; font-size:26px" class="nav-link" href="http://127.0.0.1:8000/login/post_list/">Post List</a>
+      </li>
+      </br>
+      <br>
+      <li class="nav-item">
+        <a style="color:#0E1922; text-transform: uppercase; font-family:Staatliches; font-size:26px" class="nav-link" href="http://127.0.0.1:8000/login/users_activity">User activity (Only for admin)</a>
+      </li>
+      </br>
+      <br>
+      <li class="nav-item">
+        <a style="color:red; text-transform: uppercase; font-family:Staatliches; font-size:26px" class="nav-link" href="http://127.0.0.1:8000/login/logout">Log out</a>
+      </li>
+      </br>
+     </body>
+         {% if messages %}
+         <ul class="messages">
+         {% for message in messages %}
+         <p style="color:red;font-size:30px; text-decoration:underline; font-family:Open Sans" class="{{ message.tags }}">{{ message }}</p>
+         {% endfor %}
+         </ul>
+         {% endif %}
+</html>

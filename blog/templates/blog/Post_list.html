@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <link rel="stylesheet" href="{% static 'css/funzione.css' %}" type="text/css"/>
+        <title>Bloggo</title>
+    </head>
+    <body>
+        <header>
+           <div class="empty">
+               <p>vuoto</p>
+           </div>
+        </header>
+           <h1><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">Recent posts published on Bloggo</h1>  
+                       {% for post in posts %}
+                               <h2 style="color:#DE1F5F; font-family:Open Sans; text-transform: uppercase" >{{ post.title }}</h2>
+                               <time style="font-family:Open Sans; font-size:15px">published: {{ post.published_date }} by {{post.user}}</time>
+                               <p style="font-family:Open Sans; color:#0E1922" >{{ post.content|linebreaksbr }}</p>
+                       {% endfor %}
+     </body>
+</html>
