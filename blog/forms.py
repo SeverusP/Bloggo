@@ -8,13 +8,13 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 User = get_user_model()
 
-
+#Creo il form di registrazione
 class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2',)
 
-
+#Creo il form per il login degli utenti
 class AuthenticationForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
@@ -27,6 +27,8 @@ class AuthenticationForm(forms.Form):
                 raise forms.ValidationError('Wrong username or password')
         return super(AuthenticationForm,self).clean(*args, **kwargs)
 
+
+#Creo il form per la creazione di posts
 class PostForm(forms.ModelForm):
 
     class Meta:
